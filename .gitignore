@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# full-resolution source photos (web copies live in public/)
+/design-originals/
+
+# netlify
+.netlify
