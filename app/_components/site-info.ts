@@ -28,6 +28,28 @@ export const planningSteps = [
   },
 ];
 
+export const tiers = [
+  {
+    name: "The Stay",
+    fee: "$200",
+    summary:
+      "For families who have the big picture in place and want their accommodations handled with care.",
+  },
+  {
+    name: "The Full Journey",
+    fee: "Starting at $400",
+    summary:
+      "End-to-end planning for the whole trip, so every piece fits your family's pace and priorities.",
+    featured: true,
+  },
+  {
+    name: "The Milestone Journey",
+    fee: "Starting at $650",
+    summary:
+      "For the once-in-a-lifetime trips: celebrations, reunions, and journeys that deserve extra attention.",
+  },
+];
+
 export const primaryNav = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },

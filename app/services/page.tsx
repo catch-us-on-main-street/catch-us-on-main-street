@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageBanner } from "../_components/page-banner";
 import { PageIntro } from "../_components/page-intro";
+import { tiers } from "../_components/site-info";
 import luxuryVilla from "../../public/luxury-villa.jpg";
 
 export const metadata: Metadata = {
@@ -9,28 +10,6 @@ export const metadata: Metadata = {
   description:
     "Three planning tiers for families: The Stay, The Full Journey, and The Milestone Journey.",
 };
-
-const tiers = [
-  {
-    name: "The Stay",
-    fee: "$200",
-    summary:
-      "For families who have the big picture in place and want their accommodations handled with care.",
-  },
-  {
-    name: "The Full Journey",
-    fee: "Starting at $400",
-    summary:
-      "End-to-end planning for the whole trip, so every piece fits your family's pace and priorities.",
-    featured: true,
-  },
-  {
-    name: "The Milestone Journey",
-    fee: "Starting at $650",
-    summary:
-      "For the once-in-a-lifetime trips: celebrations, reunions, and journeys that deserve extra attention.",
-  },
-];
 
 // TODO: sample answers for the mock-up; confirm wording and policies before launch.
 const faqs = [
