@@ -1,39 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import advisorPortrait from "../public/advisor-portrait.jpg";
-import familyResort from "../public/family-resort.jpg";
-import luxuryVilla from "../public/luxury-villa.jpg";
+import advisorStaircase from "../public/advisor-staircase.jpg";
+import advisorTerrace from "../public/advisor-terrace.jpg";
+import brochuresBedside from "../public/brochures-bedside.jpg";
+import brochuresMarble from "../public/brochures-marble.jpg";
 import overwaterVillas from "../public/overwater-villas.jpg";
-import sunsetPool from "../public/sunset-pool.jpg";
-import yachtCove from "../public/yacht-cove.jpg";
 import { planningSteps, tiers } from "./_components/site-info";
 import { TravelNotesSignup } from "./_components/travel-notes-signup";
 
-// Source photos are wide landscapes; `focus` keeps each subject in frame when cropped to a tall 4:5 tile.
+// Brand-shoot photos in mixed orientations; `focus` keeps each subject in frame when cropped to a tall 4:5 tile.
 const experiences = [
   {
     title: "Multigenerational Journeys",
-    image: familyResort,
-    alt: "A family arriving at a sunlit oceanfront suite as the children run toward the beach",
-    focus: "45% center",
+    image: advisorTerrace,
+    alt: "Jennifer smiling on a stone terrace, holding a travel magazine",
+    focus: "50% 85%",
     body: "Spacious coastal havens designed to bring every generation together seamlessly.",
     cta: "Explore Family Services",
     href: "/services",
   },
   {
     title: "Private Charters & Milestone Escapes",
-    image: yachtCove,
-    alt: "Aerial view of a private yacht anchored in a turquoise cove beside a forested shore",
-    focus: "45% center",
+    image: brochuresMarble,
+    alt: "Sandals and AVA resort brochures fanned out on a marble table",
+    focus: "60% center",
     body: "Secluded coves, private yacht charters, and tailored planning for your biggest milestones.",
     cta: "Plan a Celebration",
     href: "/start-here",
   },
   {
     title: "Exclusive Villas & Boutique Resorts",
-    image: luxuryVilla,
-    alt: "A modern clifftop villa with an infinity pool and palms at sunset",
-    focus: "60% center",
+    image: brochuresBedside,
+    alt: "Travel brochures, including a Royal Caribbean guide, beside a laptop on crisp white bedding",
+    focus: "50% 0%",
     body: "Handpicked five-star coastal estates and luxury private villas with exclusive client perks.",
     cta: "View Service Tiers",
     href: "/services",
@@ -191,9 +191,9 @@ export default function Home() {
                   <p className="mx-auto mt-5 max-w-xs leading-7 font-light text-espresso/75">
                     {body}
                   </p>
-                  <p className="mt-8 text-xs font-light tracking-luxe uppercase">
-                    <span className="border-b border-goldenrod/60 pb-1 transition-colors duration-300 group-hover:border-goldenrod group-hover:text-teal">
-                      {cta} <span aria-hidden>→</span>
+                  <p className="mt-8 text-xs leading-6 font-light tracking-luxe uppercase">
+                    <span className="inline-block border-b border-goldenrod/60 pb-1 text-balance transition-colors duration-300 group-hover:border-goldenrod group-hover:text-teal">
+                      {cta}&nbsp;<span aria-hidden>→</span>
                     </span>
                   </p>
                 </div>
@@ -404,24 +404,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden px-6 py-32 text-center text-cream sm:py-44">
+      {/* She stands just left of centre in the photo, so on wide screens the text moves to the right half to keep her in view. */}
+      <section className="relative isolate overflow-hidden px-6 py-32 text-center text-cream sm:py-44 lg:px-16 lg:text-left">
         <Image
-          src={sunsetPool}
+          src={advisorStaircase}
           alt=""
           fill
           sizes="100vw"
           placeholder="blur"
-          className="-z-20 object-cover"
+          className="-z-20 object-cover object-[50%_55%] md:object-[90%_55%] lg:object-[50%_70%]"
         />
-        <div aria-hidden className="absolute inset-0 -z-10 bg-black/40" />
-        <div className="reveal mx-auto max-w-3xl">
-          <p className="text-[11px] font-light tracking-airy text-cream/80 uppercase sm:text-xs">
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-black/50 lg:bg-transparent lg:bg-linear-to-l lg:from-black/75 lg:via-black/50 lg:to-black/10"
+        />
+        <div className="reveal mx-auto max-w-3xl lg:mr-0 lg:ml-[54%] lg:max-w-xl">
+          <p className="text-[11px] font-light tracking-airy text-cream uppercase [text-shadow:0_1px_8px_rgb(0_0_0/0.6)] sm:text-xs">
             Ready When You Are
           </p>
-          <h2 className="mt-6 font-display text-4xl leading-tight tracking-wider sm:text-6xl">
+          <h2 className="mt-6 font-display text-4xl leading-tight tracking-wider text-balance sm:text-6xl lg:text-5xl xl:text-6xl">
             Your Next Gathering Starts Here
           </h2>
-          <span aria-hidden className="mx-auto my-10 block h-px w-16 bg-goldenrod" />
+          <span aria-hidden className="mx-auto my-10 block h-px w-16 bg-goldenrod lg:mx-0" />
           <Link
             href="/start-here"
             className="inline-block bg-teal px-8 py-3 text-sm font-light tracking-widest text-white uppercase transition-colors hover:bg-[#0d3f4c]"
