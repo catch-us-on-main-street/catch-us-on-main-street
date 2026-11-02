@@ -33,7 +33,8 @@ These live in `app/_components/site-info.ts`, so change them there and every pag
 
 - Pages: `app/page.tsx` (Home), `app/services`, `app/about`, `app/start-here`. Shared pieces are in `app/_components/`.
 - Forms: Netlify Forms, registered via the static `public/__forms.html` and posted with `fetch`. Form detection must be enabled in Netlify.
-- Hosting: Netlify site `catch-us-main-street`. Code: GitHub `catch-us-main-street` (private).
+- Hosting: Netlify site `catch-us-main-street`. Code: GitHub `catch-us-on-main-street/catch-us-on-main-street`, in her organization.
+- The repo is **public**, because Netlify's free and Personal plans can't deploy private organization repos. Never commit passwords, API keys, `.env` files, client details, or full-size photos. Keep secrets in Netlify environment variables.
 - Domain: catchusonmainstreet.com is registered with Amazon and its DNS is on Route 53, both held by Travefy until the domain moves (roadmap Phase 1). Its email currently runs through Travefy.
 
 ## Before calling a change done
