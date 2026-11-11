@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
 import { SiteFooter } from "./_components/site-footer";
 import { SiteHeader } from "./_components/site-header";
+import { Ticker } from "./_components/ticker";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
     default: "Catch Us on Main Street | Elevated Family Travel",
     template: "%s | Catch Us on Main Street",
   },
-  description: "Elevated family travel, thoughtfully designed.",
+  description:
+    "Elevated, intentional family travel from Prosper, Texas: Disney and Universal, cruises, resorts, milestone trips, and multigenerational journeys.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -37,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <SiteHeader hasLogo={hasLogo} />
         {children}
+        <Ticker />
         <SiteFooter hasLogo={hasLogo} />
       </body>
     </html>

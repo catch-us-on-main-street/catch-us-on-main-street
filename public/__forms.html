@@ -2,8 +2,25 @@
 <!-- Never shown to visitors. Netlify reads this at deploy time to register the forms the site posts to. -->
 <html lang="en">
   <body>
-    <form name="travel-notes" data-netlify="true" netlify-honeypot="company" hidden>
+    <form name="guide-request" data-netlify="true" netlify-honeypot="company" hidden>
+      <input name="name" />
       <input type="email" name="email" />
+      <input name="company" />
+    </form>
+    <form name="trip-inquiry" data-netlify="true" netlify-honeypot="company" hidden>
+      <input name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input name="service" />
+      <input name="trip-type" />
+      <input name="destination" />
+      <input name="dates" />
+      <input name="travelers" />
+      <input name="budget" />
+      <textarea name="care-notes"></textarea>
+      <textarea name="message"></textarea>
+      <input name="heard-from" />
+      <input name="contact-preference" />
       <input name="company" />
     </form>
   </body>

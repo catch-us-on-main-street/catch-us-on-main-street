@@ -4,11 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-const navLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-];
+import { INQUIRY_HREF, primaryNav as navLinks } from "./site-info";
 
 export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
   const pathname = usePathname();
@@ -38,30 +34,30 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           : "border-b border-espresso/10 bg-cream text-espresso"
       }
     >
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-6 py-5 sm:px-10">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-5 px-6 py-3 sm:px-10">
         <Link href="/" className="font-display text-lg tracking-[0.15em]">
           {hasLogo && !logoFailed ? (
-            // logo.png is a square canvas with the crest filling only ~58% of it, so scale it up to read at h-12.
+            // White crest over the homepage photo, teal crest on cream pages.
             <Image
-              src="/logo.png"
+              src={overHero ? "/logo-white.png" : "/logo.png"}
               alt="Catch Us on Main Street Travel Co."
-              width={180}
-              height={180}
+              width={480}
+              height={480}
               preload
               onError={() => setLogoFailed(true)}
               // onError can't fire for a load that failed before hydration, so check once on mount too.
               ref={(img) => {
                 if (img?.complete && img.naturalWidth === 0) setLogoFailed(true);
               }}
-              className="h-12 w-auto scale-[1.66] object-contain"
+              className={`size-16 object-contain sm:size-20 ${overHero ? "drop-shadow-[0_1px_6px_rgb(0_0_0/0.35)]" : ""}`}
             />
           ) : (
             <span className="font-display">Catch Us on Main Street Travel Co.</span>
           )}
         </Link>
 
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-10 text-xs font-light tracking-luxe uppercase">
+        <nav aria-label="Primary" className="hidden lg:block">
+          <ul className="flex items-center gap-8 text-xs font-light tracking-luxe uppercase xl:gap-10">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
@@ -75,13 +71,13 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
             ))}
             <li>
               <Link
-                href="/start-here"
+                href={INQUIRY_HREF}
                 aria-current={pathname === "/start-here" ? "page" : undefined}
                 className={`border px-4 py-2.5 transition-colors duration-300 hover:border-goldenrod hover:bg-goldenrod hover:text-cream ${
                   overHero ? "border-cream/60" : "border-espresso/30"
                 }`}
               >
-                Start Your Trip Inquiry
+                Start Your Trip
               </Link>
             </li>
           </ul>
@@ -92,7 +88,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen(true)}
-          className="flex items-center gap-3 py-2 text-[11px] font-light tracking-luxe uppercase md:hidden"
+          className="flex items-center gap-3 py-2 text-[11px] font-light tracking-luxe uppercase lg:hidden"
         >
           Menu
           <span aria-hidden className="flex w-6 flex-col gap-1.5">
@@ -108,7 +104,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="fixed inset-0 z-50 flex flex-col bg-espresso px-6 py-5 text-cream md:hidden"
+          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-espresso px-6 py-5 text-cream lg:hidden"
         >
           <div className="flex justify-end">
             <button
@@ -121,7 +117,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
             </button>
           </div>
           <nav aria-label="Mobile" className="flex flex-1 flex-col items-center justify-center">
-            <ul className="grid gap-8 text-center font-display text-3xl tracking-wide">
+            <ul className="grid gap-6 text-center font-display text-3xl tracking-wide">
               {[{ href: "/", label: "Home" }, ...navLinks].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -137,11 +133,11 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
             </ul>
             <span aria-hidden className="my-12 block h-px w-16 bg-goldenrod" />
             <Link
-              href="/start-here"
+              href={INQUIRY_HREF}
               onClick={() => setMenuOpen(false)}
               className="bg-teal px-8 py-4 text-xs font-light tracking-widest text-white uppercase"
             >
-              Start Your Trip Inquiry
+              Start Your Trip
             </Link>
           </nav>
         </div>
