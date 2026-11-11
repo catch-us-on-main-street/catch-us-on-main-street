@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import advisorArrival from "../public/advisor-arrival.jpg";
 import advisorArmchair from "../public/advisor-armchair.jpg";
 import advisorDeskWriting from "../public/advisor-desk-writing.jpg";
 import advisorDisney from "../public/advisor-disney.jpg";
@@ -8,7 +7,8 @@ import advisorLaptopBed from "../public/advisor-laptop-bed.jpg";
 import advisorPortrait from "../public/advisor-portrait.jpg";
 import advisorStaircase from "../public/advisor-staircase.jpg";
 import couplePortrait from "../public/couple-portrait.jpg";
-import familyResort from "../public/family-resort.jpg";
+import familyHug from "../public/family-hug.jpg";
+import familyPicnic from "../public/family-picnic.jpg";
 import familyStanding from "../public/family-standing.jpg";
 import familyTogether from "../public/family-together.jpg";
 import keyHandoff from "../public/key-handoff.jpg";
@@ -22,8 +22,8 @@ import { TierCards } from "./_components/tier-cards";
 
 const tierPhotos = [
   { src: keyHandoff, alt: "A hotel key card handed across a front desk", focus: "50% 45%" },
-  { src: advisorArrival, alt: "Jennifer arriving at a hotel entrance with her luggage", focus: "50% 40%" },
-  { src: advisorDeskWriting, alt: "Jennifer writing out a trip plan beside her laptop", focus: "50% 35%" },
+  { src: familyHug, alt: "Jennifer, her husband, and their three children hugging and laughing", focus: "50% 30%" },
+  { src: passportsTote, alt: "Passports in an organizer beside a Weekend Vibes tote", focus: "50% 70%" },
 ];
 
 // Who the site is for. The family of five comes first: it is Jennifer's own family.
@@ -37,9 +37,9 @@ const travelers = [
   },
   {
     title: "Multigenerational Journeys",
-    // TODO: swap for a photo that shows three generations once Jennifer picks one.
-    image: familyResort,
-    alt: "A family with luggage arriving at a bright vacation home by the ocean",
+    // Stand-in from the family shoot until a three-generation photo arrives.
+    image: familyPicnic,
+    alt: "The family laughing together on a blanket in the grass",
     focus: "45% center",
     body: "Grandparents, parents, and grandkids on one trip, at a pace that works for every generation.",
   },
@@ -68,7 +68,7 @@ const credentials = [
 const strip = [
   { src: familyStanding, alt: "The Covington family of five under an oak tree", focus: "50% 45%" },
   { src: advisorDisney, alt: "Jennifer in Minnie ears with a Disney Parks backpack", focus: "50% 30%" },
-  { src: passportsTote, alt: "Passports in an organizer beside a Weekend Vibes tote", focus: "50% 60%" },
+  { src: advisorDeskWriting, alt: "Jennifer writing out a trip plan beside her laptop", focus: "50% 35%" },
   { src: advisorLaptopBed, alt: "Jennifer planning a trip on her laptop", focus: "50% 30%" },
   { src: advisorArmchair, alt: "Jennifer seated in a hotel suite", focus: "50% 35%" },
 ];

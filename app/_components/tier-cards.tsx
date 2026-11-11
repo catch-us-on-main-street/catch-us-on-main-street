@@ -44,10 +44,7 @@ export function TierCards({
               </div>
             )}
             <div className="px-8 pt-10">
-              <p className={`text-[11px] font-light tracking-luxe uppercase ${dark ? "text-cream/70" : "text-teal"}`}>
-                {tier.label}
-              </p>
-              <h3 className="mt-3 font-display text-2xl tracking-wide">{tier.name}</h3>
+              <h3 className="font-display text-2xl tracking-wide">{tier.name}</h3>
             </div>
             <div className="px-8 pt-6">
               <p className="font-display text-3xl">{tier.fee}</p>

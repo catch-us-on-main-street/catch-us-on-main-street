@@ -46,7 +46,6 @@ export const planningSteps = [
 // Order matters: booking only, then the featured Concierge Journey in the middle, then itinerary planning.
 export const tiers = [
   {
-    label: "Booking Only",
     name: "The Stay",
     fee: "Complimentary",
     feeNote: "For cruise, all-inclusive, and resort vacations of $5,000 or more",
@@ -60,7 +59,6 @@ export const tiers = [
     featured: false,
   },
   {
-    label: "Full Service",
     name: "The Concierge Journey",
     fee: "Starting at $650",
     feeNote: "Most journeys land between $650 and $1,500",
@@ -77,7 +75,6 @@ export const tiers = [
     featured: true,
   },
   {
-    label: "Itinerary Planning",
     name: "The Itinerary",
     fee: "$250",
     feeNote: "One destination, up to 7 days",
