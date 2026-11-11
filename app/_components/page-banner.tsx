@@ -4,12 +4,20 @@ import Image, { type StaticImageData } from "next/image";
 export function PageBanner({
   image,
   focus = "center",
+  tall = false,
 }: {
   image: StaticImageData;
   focus?: string;
+  // For photos of people: the whole 3:2 photo on phones, a taller strip on wider screens, so faces aren't cut off.
+  tall?: boolean;
 }) {
   return (
-    <div aria-hidden className="relative h-[38vh] min-h-64 w-full overflow-hidden">
+    <div
+      aria-hidden
+      className={`relative w-full overflow-hidden ${
+        tall ? "aspect-[3/2] sm:aspect-auto sm:h-[56vh] lg:h-[64vh]" : "h-[38vh] min-h-64"
+      }`}
+    >
       <Image
         src={image}
         alt=""

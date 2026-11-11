@@ -12,7 +12,10 @@ import advisorDisney from "../../public/advisor-disney.jpg";
 import advisorElevator from "../../public/advisor-elevator.jpg";
 import advisorLaptopStanding from "../../public/advisor-laptop-standing.jpg";
 import couplePortrait from "../../public/couple-portrait.jpg";
+import familyField from "../../public/family-field.jpg";
+import familyPicnic from "../../public/family-picnic.jpg";
 import familyStanding from "../../public/family-standing.jpg";
+import familySwing from "../../public/family-swing.jpg";
 import familyTogether from "../../public/family-together.jpg";
 import passportsTote from "../../public/passports-tote.jpg";
 
@@ -93,12 +96,15 @@ const rotating = [
   { src: couplePortrait, alt: "Jennifer and her husband smiling together outdoors", focus: "50% 50%" },
   { src: advisorArmchair, alt: "Jennifer seated in a hotel suite armchair", focus: "50% 35%" },
   { src: advisorDisney, alt: "Jennifer looking back over her shoulder in Minnie ears", focus: "50% 25%" },
+  { src: familyPicnic, alt: "The family laughing together on a blanket in the grass", focus: "45% 40%" },
+  { src: familySwing, alt: "Jennifer in a teal hat swinging the kids in a white blanket", focus: "50% 40%" },
+  { src: familyField, alt: "Jennifer, her husband, and their three children laughing in a summer field", focus: "50% 35%" },
 ];
 
 export default function AboutPage() {
   return (
     <main className="flex-1">
-      <PageBanner image={familyTogether} focus="50% 22%" />
+      <PageBanner image={familyTogether} focus="50% 30%" tall />
       <PageIntro eyebrow="About" title="Hello, I'm Jennifer">
         <p className="font-display text-xl leading-9 text-teal italic sm:text-2xl">
           &ldquo;I don&apos;t simply book travel. I design elevated, intentional experiences for families

@@ -8,7 +8,7 @@ import { SectionHeading } from "../_components/section-heading";
 import { INQUIRY_HREF } from "../_components/site-info";
 import { TierCards } from "../_components/tier-cards";
 import advisorDeskCall from "../../public/advisor-desk-call.jpg";
-import planningLaptop from "../../public/planning-laptop.jpg";
+import familyHug from "../../public/family-hug.jpg";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -44,7 +44,7 @@ const feeFacts = [
 export default function ServicesPage() {
   return (
     <main className="flex-1 pb-24">
-      <PageBanner image={planningLaptop} focus="40% 40%" />
+      <PageBanner image={familyHug} focus="50% 20%" tall />
       <PageIntro eyebrow="Services" title="Three Ways to Work Together">
         <p>The only question is how much of the work you want me to carry.</p>
       </PageIntro>
