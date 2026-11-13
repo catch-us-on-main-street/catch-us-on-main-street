@@ -31,7 +31,15 @@ export const planningSteps = [
 export const INQUIRY_HREF = "/start-here";
 export const GUIDE_PDF = "/how-we-work-together-guide.pdf";
 
-// Order matters: The Stay, then the featured Concierge Journey in the middle, then The Itinerary.
+export const socials = {
+  instagram: "https://www.instagram.com/catchusonmainstreet",
+  // Flodesk signup page for the Travel Notes newsletter.
+  newsletter: "https://lucky-frog-44433.myflodesk.com/bzq6dkqpcm",
+  // TODO: add the Substack URL; the Resources page shows "Coming Soon" until it is set.
+  substack: "",
+};
+
+// Order matters: The Stay, The Concierge Journey, then The Itinerary.
 // Each `slug` is the folder of its detail page under app/services.
 export const tiers = [
   {
@@ -47,7 +55,6 @@ export const tiers = [
       "Payment tracking, and someone in your corner if anything changes",
     ],
     goodToKnow: "Dining, activities, and day-by-day planning are not included.",
-    featured: false,
   },
   {
     slug: "the-concierge-journey",
@@ -63,7 +70,6 @@ export const tiers = [
       "A pre-departure call, and support while you travel",
     ],
     goodToKnow: "The final fee is set after your discovery call, based on the size and shape of your trip.",
-    featured: true,
   },
   {
     slug: "the-itinerary",
@@ -78,7 +84,6 @@ export const tiers = [
       "Dining and activity picks, with a game plan for booking day",
     ],
     goodToKnow: "You keep your own bookings. Order at least three weeks before travel, or 75 days for Disney and theme parks.",
-    featured: false,
   },
 ];
 
@@ -113,5 +118,6 @@ export const reviews = [
 export const primaryNav = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/resources", label: "Resources" },
   { href: "/start-here", label: "Start Here" },
 ];

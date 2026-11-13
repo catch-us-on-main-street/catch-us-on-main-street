@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import advisorPortrait from "../public/advisor-portrait.jpg";
 import advisorStaircase from "../public/advisor-staircase.jpg";
-import couplePortrait from "../public/couple-portrait.jpg";
-import familyTogether from "../public/family-together.jpg";
+import brochuresBedside from "../public/brochures-bedside.jpg";
+import brochuresMarble from "../public/brochures-marble.jpg";
 import overwaterVillas from "../public/overwater-villas.jpg";
 import passportsOrganizer from "../public/passports-organizer.jpg";
 import { GuideDownload } from "./_components/guide-download";
-import { planningSteps, reviews, tickerPhrases } from "./_components/site-info";
+import { planningSteps, tickerPhrases } from "./_components/site-info";
 
 // Photos in mixed orientations; `focus` keeps each subject in frame when cropped to a tall 4:5 tile.
 const experiences = [
@@ -22,26 +22,23 @@ const experiences = [
   },
   {
     title: "Milestone Escapes",
-    image: couplePortrait,
-    alt: "Jennifer and her husband arm in arm in a sunlit field",
-    focus: "50% 55%",
+    image: brochuresMarble,
+    alt: "Sandals and AVA resort brochures fanned out on a marble table",
+    focus: "60% center",
     body: "Secluded coves, private yacht charters, and tailored planning for your biggest milestones.",
     cta: "Plan a Celebration",
     href: "/start-here",
   },
   {
     title: "Family Getaways",
-    image: familyTogether,
-    alt: "Jennifer, her husband, and their three children laughing together on a park path",
-    focus: "50% 40%",
+    image: brochuresBedside,
+    alt: "Travel brochures, including a Royal Caribbean guide, beside a laptop on crisp white bedding",
+    focus: "50% 0%",
     body: "Spring break, a week at the parks, the first cruise. Room to play, room to rest, and nothing left to figure out.",
     cta: "View Services",
     href: "/services",
   },
 ];
-
-// Three of the real client quotes; the Services page shows all of them.
-const homeReviews = [reviews[0], reviews[1], reviews[3]];
 
 const credentials = [
   "Credentialed Disney & Universal advisor",
@@ -297,40 +294,6 @@ export default function Home() {
               </li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section aria-labelledby="reviews-heading" className="bg-cream px-6 py-24 sm:py-32 md:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
-              Kind Words
-            </p>
-            <h2
-              id="reviews-heading"
-              className="mt-6 font-display text-3xl tracking-wide text-espresso sm:text-4xl"
-            >
-              From the Families We&apos;ve Served
-            </h2>
-            <span aria-hidden className="mx-auto mt-8 block h-px w-16 bg-goldenrod" />
-          </div>
-          <ul className="mt-16 grid gap-8 md:grid-cols-3">
-            {homeReviews.map(({ quote, trip }) => (
-              <li key={trip} className="reveal">
-                <figure className="flex h-full flex-col border border-espresso/10 bg-white/50 p-10 text-center">
-                  <span aria-hidden className="font-display text-5xl leading-none text-goldenrod">
-                    &ldquo;
-                  </span>
-                  <blockquote className="mt-4 flex-1 font-display text-lg leading-8 text-espresso italic">
-                    {quote}
-                  </blockquote>
-                  <figcaption className="mt-8 text-[11px] font-light tracking-luxe text-teal uppercase">
-                    {trip}
-                  </figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 

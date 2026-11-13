@@ -44,37 +44,21 @@ export default function ServicesPage() {
 
       {/* Each card spans five shared rows, so names, fees, profiles, and buttons line up across all three. */}
       <section className="mx-auto grid max-w-6xl gap-x-6 gap-y-6 px-6 md:grid-cols-3">
-        {tiers.map(({ slug, name, fee, feeNote, profile, featured }) => (
+        {tiers.map(({ slug, name, fee, feeNote, profile }) => (
           <article
             key={slug}
-            className={`row-span-5 grid grid-rows-subgrid gap-y-0 border p-10 text-center ${
-              featured
-                ? "border-teal bg-teal text-cream"
-                : "border-espresso/15 bg-white/40"
-            }`}
+            className="row-span-5 grid grid-rows-subgrid gap-y-0 border border-espresso/15 bg-white/40 p-10 text-center"
           >
             <h2 className="font-display text-2xl tracking-wide">{name}</h2>
             <p className="mt-6 font-display text-3xl">{fee}</p>
-            <p
-              className={`mt-2 text-[11px] font-light uppercase tracking-luxe ${
-                featured ? "text-cream/80" : "text-teal"
-              }`}
-            >
+            <p className="mt-2 text-[11px] font-light uppercase tracking-luxe text-teal">
               {feeNote || "Planning Fee"}
             </p>
-            <p
-              className={`mt-6 leading-7 font-light ${
-                featured ? "text-cream/85" : "text-espresso/75"
-              }`}
-            >
-              {profile}
-            </p>
+            <p className="mt-6 leading-7 font-light text-espresso/75">{profile}</p>
             <Link
               href={`/services/${slug}`}
               aria-label={`Learn more about ${name}`}
-              className={`mt-10 self-end border px-6 py-3.5 text-xs font-light uppercase tracking-luxe transition-colors duration-300 hover:border-goldenrod hover:bg-goldenrod hover:text-cream ${
-                featured ? "border-cream/70" : "border-espresso/30"
-              }`}
+              className="mt-10 self-end border border-espresso/30 px-6 py-3.5 text-xs font-light uppercase tracking-luxe transition-colors duration-300 hover:border-goldenrod hover:bg-goldenrod hover:text-cream"
             >
               Learn More
             </Link>
@@ -120,7 +104,7 @@ export default function ServicesPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="faq-heading" className="mx-auto mt-24 max-w-3xl px-6">
+      <section id="faq" aria-labelledby="faq-heading" className="scroll-mt-8 mx-auto mt-24 max-w-3xl px-6">
         <h2 id="faq-heading" className="text-center font-display text-3xl tracking-wide">
           Questions, Answered
         </h2>

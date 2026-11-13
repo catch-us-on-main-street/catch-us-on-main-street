@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ServiceDetail } from "../../_components/service-detail";
-import advisorDeskWriting from "../../../public/advisor-desk-writing.jpg";
+import planningLaptopDisney from "../../../public/planning-laptop-disney.jpg";
 
 export const metadata: Metadata = {
   title: "The Itinerary",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function TheItineraryPage() {
-  return <ServiceDetail slug="the-itinerary" image={advisorDeskWriting} focus="50% 35%" />;
+  return <ServiceDetail slug="the-itinerary" image={planningLaptopDisney} focus="40% 45%" />;
 }

@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
+  { href: "/resources", label: "Resources" },
 ];
 
 export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
@@ -66,7 +67,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           )}
         </Link>
 
-        <nav aria-label="Primary" className="hidden md:block">
+        <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-10 text-xs font-light tracking-luxe uppercase">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
@@ -98,7 +99,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMenuOpen(true)}
-          className="flex items-center gap-3 py-2 text-[11px] font-light tracking-luxe uppercase md:hidden"
+          className="flex items-center gap-3 py-2 text-[11px] font-light tracking-luxe uppercase lg:hidden"
         >
           Menu
           <span aria-hidden className="flex w-6 flex-col gap-1.5">
@@ -114,7 +115,7 @@ export function SiteHeader({ hasLogo }: { hasLogo: boolean }) {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="fixed inset-0 z-50 flex flex-col bg-espresso px-6 py-5 text-cream md:hidden"
+          className="fixed inset-0 z-50 flex flex-col bg-espresso px-6 py-5 text-cream lg:hidden"
         >
           <div className="flex justify-end">
             <button
