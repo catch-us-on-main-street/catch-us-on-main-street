@@ -27,7 +27,7 @@ const experiences = [
     focus: "60% center",
     body: "Secluded coves, private yacht charters, and tailored planning for your biggest milestones.",
     cta: "Plan a Celebration",
-    href: "/start-here",
+    href: "/services",
   },
   {
     title: "Family Getaways",
