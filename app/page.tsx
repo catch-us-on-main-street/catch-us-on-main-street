@@ -79,7 +79,8 @@ export default function Home() {
           <span aria-hidden className="my-10 block h-px w-16 bg-goldenrod" />
           <p className="max-w-xl text-base leading-8 font-light text-cream/90 sm:text-lg">
             Luxury trips designed around the people you&apos;re bringing, from
-            first-time Disney visits to three-generation villa stays.
+            first-time family vacations to unbelievable destinations that
+            don&apos;t seem real.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
             <Link
