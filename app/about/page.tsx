@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageBanner } from "../_components/page-banner";
 import { PageIntro } from "../_components/page-intro";
 import advisorPortrait from "../../public/advisor-portrait.jpg";
-import familyResort from "../../public/family-resort.jpg";
+import cozumelShore from "../../public/cozumel-shore.jpg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -36,13 +36,31 @@ const specialties = [
 export default function AboutPage() {
   return (
     <main className="flex-1 pb-24">
-      <PageBanner image={familyResort} focus="45% center" />
-      <PageIntro eyebrow="About" title="Hello, I'm Jennifer">
-        <p>
-          After more than 15 years in corporate consulting, I brought the same
-          attention to detail, organization, and client care to the work I love
-          most: designing travel that families remember.
-        </p>
+      <PageBanner image={cozumelShore} focus="50% 40%" />
+      {/* Origin story, from "The Name Behind the Brand" in the How We Work Together guide. */}
+      <PageIntro eyebrow="The Name Behind the Brand" title="The Name Came From a Feeling">
+        <div className="grid gap-6 text-left sm:text-center">
+          <p>
+            I am a Disney adult, proudly and unashamedly. So is my husband, and
+            our three kids are growing up as Disney kids. Main Street USA is not
+            just the entrance to a theme park for us. It is where the magic
+            starts.
+          </p>
+          <p>
+            In March 2025 I was laid off. Four days after my last day of work, I
+            was at Disneyland, leaning into faith and everything that matters
+            most. This business came from that season, and from the belief that
+            elevated, intentional family travel is something every family
+            deserves. You can be caught on Main Street USA, or anywhere in the
+            world, doing it up and doing it well, in the middle of life&apos;s
+            highs and lows.
+          </p>
+          <p className="font-display text-xl leading-9 text-espresso italic sm:text-2xl">
+            That is what this is really about: creating the memories our
+            children will carry forever, and helping other families do exactly
+            the same.
+          </p>
+        </div>
       </PageIntro>
 
       <section className="mx-auto grid max-w-5xl gap-px border-y border-espresso/10 bg-espresso/10 sm:grid-cols-3">
@@ -71,7 +89,16 @@ export default function AboutPage() {
             />
           </div>
         </div>
-        <div className="reveal text-center text-base leading-8 font-light text-espresso/80 sm:text-lg md:text-left">
+        <div className="reveal grid gap-5 text-center text-base leading-8 font-light text-espresso/80 sm:text-lg md:text-left">
+          <h2 className="font-display text-4xl tracking-wide text-espresso">
+            Hello, I&apos;m <span className="italic">Jennifer</span>
+          </h2>
+          <span aria-hidden className="mx-auto block h-px w-16 bg-goldenrod md:mx-0" />
+          <p>
+            After more than 15 years in corporate consulting, I brought the same
+            attention to detail, organization, and client care to the work I love
+            most: designing travel that families remember.
+          </p>
           <p>
             From our home base in Prosper, Texas, my family of five has learned
             firsthand what makes a trip work for everyone, and what can make it
