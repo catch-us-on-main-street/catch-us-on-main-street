@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageBanner } from "../_components/page-banner";
 import { PageIntro } from "../_components/page-intro";
 import advisorPortrait from "../../public/advisor-portrait.jpg";
-import familyResort from "../../public/family-resort.jpg";
+import cozumelShore from "../../public/cozumel-shore.jpg";
 
 export const metadata: Metadata = {
   title: "About",
@@ -36,7 +36,7 @@ const specialties = [
 export default function AboutPage() {
   return (
     <main className="flex-1 pb-24">
-      <PageBanner image={familyResort} focus="45% center" />
+      <PageBanner image={cozumelShore} focus="50% 40%" />
       <PageIntro eyebrow="About" title="Hello, I'm Jennifer">
         <p>
           After more than 15 years in corporate consulting, I brought the same

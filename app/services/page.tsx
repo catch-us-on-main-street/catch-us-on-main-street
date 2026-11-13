@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageBanner } from "../_components/page-banner";
 import { PageIntro } from "../_components/page-intro";
-import { tiers } from "../_components/site-info";
+import { reviews, tiers } from "../_components/site-info";
 import luxuryVilla from "../../public/luxury-villa.jpg";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Three planning tiers for families: The Stay, The Full Journey, and The Milestone Journey.",
+    "Three ways to plan with Catch Us on Main Street: The Stay, The Concierge Journey, and The Itinerary.",
 };
 
 // TODO: sample answers for the mock-up; confirm wording and policies before launch.
@@ -42,39 +42,41 @@ export default function ServicesPage() {
         </p>
       </PageIntro>
 
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
-        {tiers.map(({ name, fee, summary, featured }) => (
+      {/* Each card spans five shared rows, so names, fees, profiles, and buttons line up across all three. */}
+      <section className="mx-auto grid max-w-6xl gap-x-6 gap-y-6 px-6 md:grid-cols-3">
+        {tiers.map(({ slug, name, fee, feeNote, profile, featured }) => (
           <article
-            key={name}
-            className={`flex flex-col border p-10 text-center ${
+            key={slug}
+            className={`row-span-5 grid grid-rows-subgrid gap-y-0 border p-10 text-center ${
               featured
                 ? "border-teal bg-teal text-cream"
                 : "border-espresso/15 bg-white/40"
             }`}
           >
             <h2 className="font-display text-2xl tracking-wide">{name}</h2>
+            <p className="mt-6 font-display text-3xl">{fee}</p>
             <p
-              className={`mt-6 text-xs font-light uppercase tracking-luxe ${
+              className={`mt-2 text-[11px] font-light uppercase tracking-luxe ${
                 featured ? "text-cream/80" : "text-teal"
               }`}
             >
-              Planning Fee
+              {feeNote || "Planning Fee"}
             </p>
-            <p className="mt-2 font-display text-3xl">{fee}</p>
             <p
-              className={`mt-6 flex-1 leading-7 font-light ${
+              className={`mt-6 leading-7 font-light ${
                 featured ? "text-cream/85" : "text-espresso/75"
               }`}
             >
-              {summary}
+              {profile}
             </p>
             <Link
-              href="/start-here"
-              className={`mt-10 border px-6 py-3.5 text-xs font-light uppercase tracking-luxe transition-colors duration-300 hover:border-goldenrod hover:bg-goldenrod hover:text-cream ${
+              href={`/services/${slug}`}
+              aria-label={`Learn more about ${name}`}
+              className={`mt-10 self-end border px-6 py-3.5 text-xs font-light uppercase tracking-luxe transition-colors duration-300 hover:border-goldenrod hover:bg-goldenrod hover:text-cream ${
                 featured ? "border-cream/70" : "border-espresso/30"
               }`}
             >
-              Start Your Trip Inquiry
+              Learn More
             </Link>
           </article>
         ))}
@@ -87,6 +89,35 @@ export default function ServicesPage() {
           number of travelers, destinations, length of travel, and any special
           requirements. Your exact fee is confirmed after your discovery call.
         </p>
+      </section>
+
+      <section aria-labelledby="reviews-heading" className="mx-auto mt-24 max-w-6xl px-6">
+        <div className="text-center">
+          <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
+            Kind Words
+          </p>
+          <h2 id="reviews-heading" className="mt-6 font-display text-3xl tracking-wide">
+            From the Families We&apos;ve Served
+          </h2>
+          <span aria-hidden className="mx-auto mt-8 block h-px w-16 bg-goldenrod" />
+        </div>
+        <ul className="mt-12 grid gap-6 md:grid-cols-2">
+          {reviews.map(({ quote, trip }) => (
+            <li key={trip} className="reveal">
+              <figure className="flex h-full flex-col border border-espresso/10 bg-white/50 px-8 py-10 text-center sm:px-12">
+                <span aria-hidden className="font-display text-5xl leading-none text-goldenrod">
+                  &ldquo;
+                </span>
+                <blockquote className="mt-4 flex-1 font-display text-lg leading-8 text-espresso italic">
+                  {quote}
+                </blockquote>
+                <figcaption className="mt-8 text-[11px] font-light tracking-luxe text-teal uppercase">
+                  {trip}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section aria-labelledby="faq-heading" className="mx-auto mt-24 max-w-3xl px-6">

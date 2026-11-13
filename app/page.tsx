@@ -2,67 +2,46 @@ import Image from "next/image";
 import Link from "next/link";
 import advisorPortrait from "../public/advisor-portrait.jpg";
 import advisorStaircase from "../public/advisor-staircase.jpg";
-import advisorTerrace from "../public/advisor-terrace.jpg";
-import brochuresBedside from "../public/brochures-bedside.jpg";
-import brochuresMarble from "../public/brochures-marble.jpg";
+import couplePortrait from "../public/couple-portrait.jpg";
+import familyTogether from "../public/family-together.jpg";
 import overwaterVillas from "../public/overwater-villas.jpg";
-import { planningSteps, tiers } from "./_components/site-info";
-import { TravelNotesSignup } from "./_components/travel-notes-signup";
+import passportsOrganizer from "../public/passports-organizer.jpg";
+import { GuideDownload } from "./_components/guide-download";
+import { planningSteps, reviews, tickerPhrases } from "./_components/site-info";
 
-// Brand-shoot photos in mixed orientations; `focus` keeps each subject in frame when cropped to a tall 4:5 tile.
+// Photos in mixed orientations; `focus` keeps each subject in frame when cropped to a tall 4:5 tile.
 const experiences = [
   {
     title: "Multigenerational Journeys",
-    image: advisorTerrace,
-    alt: "Jennifer smiling on a stone terrace, holding a travel magazine",
-    focus: "50% 85%",
+    image: passportsOrganizer,
+    alt: "A family's passports tucked into a travel organizer",
+    focus: "50% 30%",
     body: "Spacious coastal havens designed to bring every generation together seamlessly.",
     cta: "Explore Family Services",
     href: "/services",
   },
   {
-    title: "Private Charters & Milestone Escapes",
-    image: brochuresMarble,
-    alt: "Sandals and AVA resort brochures fanned out on a marble table",
-    focus: "60% center",
+    title: "Milestone Escapes",
+    image: couplePortrait,
+    alt: "Jennifer and her husband arm in arm in a sunlit field",
+    focus: "50% 55%",
     body: "Secluded coves, private yacht charters, and tailored planning for your biggest milestones.",
     cta: "Plan a Celebration",
     href: "/start-here",
   },
   {
-    title: "Exclusive Villas & Boutique Resorts",
-    image: brochuresBedside,
-    alt: "Travel brochures, including a Royal Caribbean guide, beside a laptop on crisp white bedding",
-    focus: "50% 0%",
-    body: "Handpicked five-star coastal estates and luxury private villas with exclusive client perks.",
-    cta: "View Service Tiers",
+    title: "Family Getaways",
+    image: familyTogether,
+    alt: "Jennifer, her husband, and their three children laughing together on a park path",
+    focus: "50% 40%",
+    body: "Spring break, a week at the parks, the first cruise. Room to play, room to rest, and nothing left to figure out.",
+    cta: "View Services",
     href: "/services",
   },
 ];
 
-// TODO: sample copy for the mock-up; replace with real client reviews before launch.
-const reviews = [
-  {
-    quote:
-      "Three generations, one villa, and not a single stressful moment. Every detail was handled before we even asked.",
-    family: "The R. Family",
-    trip: "Turks & Caicos · June 2026",
-  },
-  {
-    quote:
-      "Traveling with our son's food allergies used to be our biggest worry. This time the chefs knew him by name on day one.",
-    family: "The M. Family",
-    trip: "Walt Disney World · March 2026",
-  },
-  {
-    quote:
-      "Our anniversary trip felt effortless and deeply personal. We came home already planning the next one.",
-    family: "Dana & Marcus",
-    trip: "Amalfi Coast · September 2026",
-  },
-];
-
-const tickerPhrase = "Thoughtful Travel, Designed for Families";
+// Three of the real client quotes; the Services page shows all of them.
+const homeReviews = [reviews[0], reviews[1], reviews[3]];
 
 const credentials = [
   "Credentialed Disney & Universal advisor",
@@ -121,7 +100,7 @@ export default function Home() {
           </div>
         </div>
         <a
-          href="#approach"
+          href="#philosophy"
           className="mx-auto mb-8 flex flex-col items-center gap-3 text-[10px] font-light tracking-luxe text-cream/75 uppercase transition-colors hover:text-cream"
         >
           Discover
@@ -131,16 +110,16 @@ export default function Home() {
 
       {/* TODO: placeholder wording for the mock-up; replace with her own words. */}
       <section
-        id="approach"
-        aria-labelledby="approach-heading"
+        id="philosophy"
+        aria-labelledby="philosophy-heading"
         className="bg-cream px-6 pt-24 pb-8 text-center sm:pt-32"
       >
         <div className="reveal mx-auto max-w-3xl">
           <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
-            Our Approach
+            Our Philosophy
           </p>
           <h2
-            id="approach-heading"
+            id="philosophy-heading"
             className="mt-6 font-display text-3xl leading-snug tracking-wide text-espresso sm:text-[2.6rem]"
           >
             Travel should bring your family closer,{" "}
@@ -161,18 +140,31 @@ export default function Home() {
         aria-labelledby="experiences-heading"
         className="bg-[#F5F2EF] px-6 py-24 md:px-12"
       >
-        <h2
-          id="experiences-heading"
-          className="text-center font-display text-3xl font-normal tracking-wide text-espresso sm:text-4xl"
-        >
-          Curated Experiences, Tailored for You
-        </h2>
-        <span aria-hidden className="mx-auto mt-8 mb-16 block h-px w-16 bg-goldenrod" />
+        <div className="reveal mx-auto max-w-2xl text-center">
+          <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
+            Why Families Work With Us
+          </p>
+          <h2
+            id="experiences-heading"
+            className="mt-6 font-display text-3xl font-normal tracking-wide text-espresso sm:text-4xl"
+          >
+            Curated Experiences, Tailored for You
+          </h2>
+          <span aria-hidden className="mx-auto my-8 block h-px w-16 bg-goldenrod" />
+          <p className="text-base leading-8 font-light text-espresso/80 sm:text-lg">
+            Less planning, more together. Every detail is handled, so no one
+            comes home needing a vacation from the vacation.
+          </p>
+        </div>
 
-        <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
+        {/* Each card spans four shared rows (photo, title, text, button), so titles, text, and buttons line up across all three. */}
+        <ul className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-x-8 md:grid-cols-3">
           {experiences.map(({ title, image, alt, focus, body, cta, href }) => (
-            <li key={title} className="reveal">
-              <Link href={href} className="group block text-espresso">
+            <li key={title} className="reveal row-span-4 grid grid-cols-[minmax(0,1fr)] grid-rows-subgrid pb-12 md:pb-0">
+              <Link
+                href={href}
+                className="group row-span-4 grid grid-cols-[minmax(0,1fr)] grid-rows-subgrid text-center text-espresso"
+              >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src={image}
@@ -184,37 +176,42 @@ export default function Home() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="px-2 pt-10 pb-4 text-center">
-                  <h3 className="font-display text-2xl leading-snug tracking-wide">
-                    {title}
-                  </h3>
-                  <p className="mx-auto mt-5 max-w-xs leading-7 font-light text-espresso/75">
-                    {body}
-                  </p>
-                  <p className="mt-8 text-xs leading-6 font-light tracking-luxe uppercase">
-                    <span className="inline-block border-b border-goldenrod/60 pb-1 text-balance transition-colors duration-300 group-hover:border-goldenrod group-hover:text-teal">
-                      {cta}&nbsp;<span aria-hidden>→</span>
-                    </span>
-                  </p>
-                </div>
+                <h3 className="px-2 pt-10 font-display text-xl leading-snug tracking-wide lg:text-2xl">
+                  {title}
+                </h3>
+                <p className="mx-auto mt-5 max-w-xs px-2 leading-7 font-light text-espresso/75">
+                  {body}
+                </p>
+                <p className="mt-8 pb-4 text-xs leading-6 font-light tracking-luxe uppercase">
+                  <span className="text-balance underline decoration-goldenrod/60 underline-offset-[7px] transition-colors duration-300 group-hover:text-teal group-hover:decoration-goldenrod">
+                    {cta}&nbsp;<span aria-hidden>→</span>
+                  </span>
+                </p>
               </Link>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Decorative ticker band; the sparkle echoes the star in the crest. */}
-      <div aria-hidden className="overflow-hidden bg-teal py-6 text-cream">
-        <div className="marquee-track">
-          {Array.from({ length: 8 }, (_, i) => (
-            <span
-              key={i}
-              className="flex shrink-0 items-center gap-10 pr-10 font-display text-xl tracking-wider whitespace-nowrap italic sm:text-2xl"
-            >
-              {tickerPhrase}
-              <span className="text-goldenrod not-italic">✦</span>
-            </span>
+      {/* Moving banner; the sparkle echoes the star in the crest. Screen readers get the phrases once. */}
+      <div className="overflow-hidden bg-teal py-6 text-cream">
+        <ul className="sr-only">
+          {tickerPhrases.map((p) => (
+            <li key={p}>{p}</li>
           ))}
+        </ul>
+        <div aria-hidden className="marquee-track">
+          {Array.from({ length: 4 }, () => tickerPhrases)
+            .flat()
+            .map((phrase, i) => (
+              <span
+                key={i}
+                className="flex shrink-0 items-center gap-10 pr-10 font-display text-xl tracking-wider whitespace-nowrap italic sm:text-2xl"
+              >
+                {phrase}
+                <span className="text-goldenrod not-italic">✦</span>
+              </span>
+            ))}
         </div>
       </div>
 
@@ -303,47 +300,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby="tiers-heading" className="bg-white/50 px-6 py-24 sm:py-32 md:px-12">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
-              Ways to Work Together
-            </p>
-            <h2
-              id="tiers-heading"
-              className="mt-6 font-display text-3xl tracking-wide text-espresso sm:text-4xl"
-            >
-              Choose Your Level of Planning
-            </h2>
-            <span aria-hidden className="mx-auto mt-8 block h-px w-16 bg-goldenrod" />
-          </div>
-          <ul className="mt-16 grid border-y border-espresso/10 md:grid-cols-3 md:divide-x md:divide-espresso/10">
-            {tiers.map(({ name, fee, summary }) => (
-              <li
-                key={name}
-                className="reveal border-b border-espresso/10 px-6 py-10 text-center last:border-b-0 md:border-b-0 md:px-10"
-              >
-                <h3 className="font-display text-2xl tracking-wide text-espresso">{name}</h3>
-                <p className="mt-4 text-[11px] font-light tracking-luxe text-teal uppercase">
-                  Planning Fee · {fee}
-                </p>
-                <p className="mx-auto mt-5 max-w-xs leading-7 font-light text-espresso/75">
-                  {summary}
-                </p>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-12 text-center">
-            <Link
-              href="/services"
-              className="inline-block border-b border-goldenrod/60 pb-1 text-xs font-light tracking-luxe text-espresso uppercase transition-colors hover:border-goldenrod hover:text-teal"
-            >
-              Compare Services <span aria-hidden>→</span>
-            </Link>
-          </p>
-        </div>
-      </section>
-
       <section aria-labelledby="reviews-heading" className="bg-cream px-6 py-24 sm:py-32 md:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
@@ -359,8 +315,8 @@ export default function Home() {
             <span aria-hidden className="mx-auto mt-8 block h-px w-16 bg-goldenrod" />
           </div>
           <ul className="mt-16 grid gap-8 md:grid-cols-3">
-            {reviews.map(({ quote, family, trip }) => (
-              <li key={family} className="reveal">
+            {homeReviews.map(({ quote, trip }) => (
+              <li key={trip} className="reveal">
                 <figure className="flex h-full flex-col border border-espresso/10 bg-white/50 p-10 text-center">
                   <span aria-hidden className="font-display text-5xl leading-none text-goldenrod">
                     &ldquo;
@@ -368,39 +324,34 @@ export default function Home() {
                   <blockquote className="mt-4 flex-1 font-display text-lg leading-8 text-espresso italic">
                     {quote}
                   </blockquote>
-                  <figcaption className="mt-8">
-                    <p className="text-sm font-normal text-espresso">{family}</p>
-                    <p className="mt-1 text-[11px] font-light tracking-luxe text-teal uppercase">
-                      {trip}
-                    </p>
+                  <figcaption className="mt-8 text-[11px] font-light tracking-luxe text-teal uppercase">
+                    {trip}
                   </figcaption>
                 </figure>
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-center text-xs font-light text-espresso/50">
-            Sample reviews shown for layout. Real client reviews coming soon.
-          </p>
         </div>
       </section>
 
-      <section aria-labelledby="notes-heading" className="bg-[#E3EDEF] px-6 py-24 text-center sm:py-28">
-        <div className="reveal mx-auto max-w-2xl">
+      <section aria-labelledby="guide-heading" className="bg-[#E3EDEF] px-6 py-24 text-center sm:py-28">
+        <div className="reveal mx-auto max-w-3xl">
           <p className="text-[11px] font-light tracking-airy text-teal uppercase sm:text-xs">
-            Monthly Travel Notes
+            Free Guide
           </p>
           <h2
-            id="notes-heading"
-            className="mt-6 font-display text-3xl tracking-wide text-espresso sm:text-4xl"
+            id="guide-heading"
+            className="mt-6 font-display text-3xl tracking-wide text-balance text-espresso sm:text-4xl"
           >
-            Ideas for Your Next Family Escape
+            Want to Learn More About How We Work Together?
           </h2>
           <span aria-hidden className="mx-auto my-8 block h-px w-16 bg-goldenrod" />
-          <p className="mb-10 text-base leading-8 font-light text-espresso/80">
-            One email a month with destination ideas, booking windows worth
-            knowing, and perks reserved for our clients.
+          <p className="mx-auto mb-10 max-w-xl text-base leading-8 font-light text-espresso/80">
+            Share your name and email to receive the How We Work Together
+            Services &amp; Investment Guide: each service, what&apos;s included,
+            and how planning fees work.
           </p>
-          <TravelNotesSignup />
+          <GuideDownload />
         </div>
       </section>
 
