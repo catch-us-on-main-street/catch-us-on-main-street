@@ -42,7 +42,7 @@ export default function ResourcesPage() {
       eyebrow: "Answers",
       title: "Frequently Asked Questions",
       body: "Planning fees, timing, already-booked trips, and traveling with food allergies.",
-      href: "/services#faq",
+      href: "/faq",
       label: "Read the FAQ",
     },
   ];
