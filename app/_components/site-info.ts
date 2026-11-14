@@ -1,6 +1,7 @@
 // Shared business details, so the footer, homepage and Start Here page never drift apart.
 
-// TODO: this address returns 404 on Travefy; replace with the working form link from the Travefy account.
+// The Travefy link returns 404, so trip inquiries now come through the on-site form at /start-here.
+// Kept for reference until the working Travefy form link is confirmed.
 export const INQUIRY_FORM_URL =
   "https://catchusonmainstreet.com/f/6ws9rqwaqzuqra2uwxzcwqwfye4vpkzy4q";
 
@@ -30,6 +31,7 @@ export const planningSteps = [
 
 export const INQUIRY_HREF = "/start-here";
 export const GUIDE_PDF = "/how-we-work-together-guide.pdf";
+export const CONTACT_EMAIL = "catchusonmainstreet@gmail.com";
 
 export const socials = {
   instagram: "https://www.instagram.com/catchusonmainstreet",
@@ -116,8 +118,16 @@ export const reviews = [
 ];
 
 export const primaryNav = [
+  { href: "/how-we-work", label: "Our Process" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/resources", label: "Resources" },
   { href: "/start-here", label: "Start Here" },
+];
+
+// Footer-only links.
+export const footerLinks = [
+  { href: "/faq", label: "FAQ" },
+  { href: "/partners", label: "Preferred Partners" },
+  { href: "/policies", label: "Policies" },
 ];

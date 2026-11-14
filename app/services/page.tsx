@@ -128,6 +128,14 @@ export default function ServicesPage() {
         <p className="mt-6 text-center text-xs font-light text-espresso/50">
           Sample answers shown for layout.
         </p>
+        <p className="mt-8 text-center">
+          <Link
+            href="/faq"
+            className="inline-block border-b border-goldenrod/60 pb-1 text-xs font-light tracking-luxe uppercase transition-colors hover:border-goldenrod hover:text-teal"
+          >
+            See All Questions <span aria-hidden>→</span>
+          </Link>
+        </p>
         <div className="mt-14 text-center">
           <Link
             href="/start-here"
